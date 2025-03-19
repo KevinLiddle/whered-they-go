@@ -1,0 +1,144 @@
+html {
+  font-size: 24px;
+  background-color: rgba(141, 200, 232, 0.15);
+  font-family: "Darker Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+
+    #game-zone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+
+      hr {
+        height: 1px;
+        width: 100%;
+        color: #63666a;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  input, .row, ol.autosuggest li {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    box-sizing: border-box;
+    padding: .8rem;
+  }
+
+  input, .row {
+    border-radius: 3px;
+  }
+
+  input {
+    border: 1px solid #d9d9d6;
+  }
+
+  .player {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .round__player {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .round__player__headshot {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+
+    .round__guesses {
+      display: flex;
+      gap: 1rem;
+
+      .round__guesses__column {
+        display: flex;
+        flex-direction: column;
+        width: 30rem;
+
+        .round__guesses__input {
+          position: relative;
+          display: inline-flex;
+
+          input {
+            flex-grow: 1;
+          }
+
+          ol.autosuggest:empty {
+            display: none;
+          }
+
+          ol.autosuggest {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            max-height: 11rem;
+            overflow-y: scroll;
+            border: 1px solid #d9d9d6;
+            border-radius: 3px;
+            border-collapse: collapse;
+
+            li {
+              background-color: #ffffff;
+            }
+
+            li:not(:last-child) {
+              border-bottom: 1px solid #d9d9d6;
+            }
+
+            li:hover {
+              background-color: #8dc8e8;
+            }
+          }
+        }
+
+        .guess {
+          color: #b1b3b3;
+          margin-top: 1rem;
+        }
+
+        .guess.incorrect {
+          background-color: rgba(255, 0, 0, 0.2);
+          color: #000000;
+        }
+
+        .guess.correct {
+          background-color: rgba(0, 255, 0, 0.2);
+          color: #000000;
+        }
+
+        .guess.correct:after {
+          content: 'Nice!';
+          display: inline-block;
+          font-style: italic;
+          font-size: 0.9rem;
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
