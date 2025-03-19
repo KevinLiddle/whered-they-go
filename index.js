@@ -629,52 +629,53 @@ const tokenizeCollege = (college, tokens = []) => {
   return newTokens;
 }
 
+const renderGuesses = (college, guesses) => [...Array(MAX_GUESSES)].map((_, guessIndex) => {
+  const hasGuess = !!guesses[guessIndex];
+  const guess = guesses[guessIndex] || `Guess ${guessIndex + 1}`;
+  const classes = Object.entries({
+    correct: hasGuess && guess === college,
+    incorrect: hasGuess && guess !== college,
+  }).reduce((acc, [k, v]) => v ? `${acc} ${k}` : acc, '');
+
+  return `<div class="row guess ${classes}">${guess}</div>`;
+}).join('');
+
+const renderPlayerSection = ({ name, headshot, college, league, roundIndex, guesses }) => {
+  const disabled = guesses.some((g) => g === college) || guesses.length === MAX_GUESSES;
+  return (
+    `
+      <div class="player">
+        <div class="round__player">
+          <img
+            class="round__player__headshot"
+            src="${getHeadshot({ headshot, league })}"
+            alt="${name}"
+          />
+          <h3 class="round__player__name">${name}</h3>
+        </div>
+        <div class="round__guesses">
+          <div class="round__guesses__column">
+            <div class="round__guesses__input">
+              <input
+                type="text"
+                id="college-input-${roundIndex}"
+                placeholder="NCAA school"
+                ${disabled ? 'disabled' : ''}
+              />
+              <ol class="autosuggest" id="autosuggest-list-${roundIndex}"></ol>
+            </div>
+            ${renderGuesses(college, guesses)}
+          </div>
+        </div>
+      </div>
+    `
+  );
+};
+
 const updateResults = () => {
   const todaysResults = JSON.parse(window.localStorage.getItem(todayKey) || '[[],[]]');
 
   const gameZone = document.getElementById('game-zone');
-
-  const renderPlayerSection = ({ name, headshot, college, league, roundIndex, guesses }) => {
-    const disabled = guesses.some((g) => g === college) || guesses.length === MAX_GUESSES;
-    return (
-      `
-        <div class="player">
-          <div class="round__image_row">
-            <div class="round__player">
-              <img
-                class="round__player__headshot"
-                src="${getHeadshot({ headshot, league })}"
-                alt="${name}"
-              />
-              <h3 class="round__player__name">${name}</h3>
-            </div>
-          </div>
-          <div class="round__guesses">
-            <div class="round__guesses__column">
-              <div class="round__guesses__input">
-                <input
-                  type="text"
-                  id="college-input-${roundIndex}"
-                  placeholder="NCAA school"
-                  ${disabled ? 'disabled' : ''}
-                />
-                <ol class="autosuggest" id="autosuggest-list-${roundIndex}"></ol>
-              </div>
-              ${[...Array(MAX_GUESSES)].map((_, guessIndex) => {
-                const hasGuess = !!guesses[guessIndex];
-                const guess = guesses[guessIndex] || `Guess ${guessIndex + 1}`;
-                const classes = Object.entries({
-                  correct: hasGuess && guess === college,
-                  incorrect: hasGuess && guess !== college,
-                }).reduce((acc, [k, v]) => v ? `${acc} ${k}` : acc, '');
-                return `<div class="row guess ${classes}">${guess}</div>`;
-              }).join('')}
-            </div>
-          </div>
-        </div>
-      `
-    );
-  };
 
   const setupEventListeners = (roundIndex) => {
     const collegeInput = document.getElementById(`college-input-${roundIndex}`);
@@ -721,7 +722,6 @@ const updateResults = () => {
       }
     });
   };
-
 
   gameZone.innerHTML = todaysResults.map((guesses, roundIndex) => {
     return renderPlayerSection({ ...todaysAnswers[roundIndex], guesses, roundIndex });
