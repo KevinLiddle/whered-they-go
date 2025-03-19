@@ -539,6 +539,7 @@ const COLLEGES = {
   "New Mexico": { conference: "", logo: "" },
   "North Carolina State": { conference: "", logo: "" },
   "North Carolina": { conference: "", logo: "" },
+  "Northern Colorado": { conference: "", logo: "" },
   "Northwestern": { conference: "", logo: "" },
   "Notre Dame": { conference: "", logo: "" },
   "Oakland": { conference: "", logo: "" },
@@ -599,8 +600,8 @@ const CONFERENCES = {
 
 const GAMES = [
   [
-    { name: "Zion Williamson", headshot: undefined, college: "Duke", league: "NBA" },
-    { name: "A'ja Wilson", headshot: undefined, college: "South Carolina", league: "WNBA" }
+    { name: "Dalton Knecht", headshot: undefined, colleges: ["Northern Colorado", "Tennessee"], league: "NBA" },
+    { name: "A'ja Wilson", headshot: undefined, colleges: ["South Carolina"], league: "WNBA" }
   ]
 ];
 
@@ -608,13 +609,20 @@ const now = new Date();
 const todayKey = `WTG-${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
 const TWENTY_FOUR_HOURS_IN_MILLIS = 86400000;
 const RELEASE_DAY = new Date();
-const MAX_GUESSES = 3;
+const MIN_GUESSES = 3;
 
-const gameNumber = Math.floor((now - RELEASE_DAY) / TWENTY_FOUR_HOURS_IN_MILLIS);
-const todaysAnswers = GAMES[gameNumber];
+const BLACK_SQUARE = String.fromCodePoint(0x2B1B);
+const GREEN_SQUARE = String.fromCodePoint(0x1F7E9);
+const RED_SQUARE = String.fromCodePoint(0x1F7E5);
+
+const gameIndex = Math.floor((now - RELEASE_DAY) / TWENTY_FOUR_HOURS_IN_MILLIS);
+const gameNumber = gameIndex + 1;
+const todaysAnswers = GAMES[gameIndex];
+
+const getLeagueLogo = (league) => `./images/${league.toLowerCase()}-logo.png`;
 
 const getHeadshot = ({ headshot, league }) =>
-  headshot || (league === 'NBA' ? './images/nba-logo.png' : './images/wnba-logo.png');
+  headshot || getLeagueLogo(league);
 
 const tokenizeCollege = (college, tokens = []) => {
   const trimmedCollege = college.trim();
@@ -629,59 +637,151 @@ const tokenizeCollege = (college, tokens = []) => {
   return newTokens;
 }
 
-const renderGuesses = (college, guesses) => [...Array(MAX_GUESSES)].map((_, guessIndex) => {
-  const hasGuess = !!guesses[guessIndex];
-  const guess = guesses[guessIndex] || `Guess ${guessIndex + 1}`;
-  const classes = Object.entries({
-    correct: hasGuess && guess === college,
-    incorrect: hasGuess && guess !== college,
-  }).reduce((acc, [k, v]) => v ? `${acc} ${k}` : acc, '');
+const getMaxGuesses = (colleges) => MIN_GUESSES + 2 * (colleges.length - 1);
 
-  return `<div class="row guess ${classes}">${guess}</div>`;
-}).join('');
+const isRoundCorrect = (colleges, guesses) => colleges.every((c) => guesses.includes(c))
 
-const renderPlayerSection = ({ name, headshot, college, league, roundIndex, guesses }) => {
-  const disabled = guesses.some((g) => g === college) || guesses.length === MAX_GUESSES;
-  return (
-    `
-      <div class="player">
-        <div class="round__player">
-          <img
-            class="round__player__headshot"
-            src="${getHeadshot({ headshot, league })}"
-            alt="${name}"
-          />
-          <h3 class="round__player__name">${name}</h3>
-        </div>
-        <div class="round__guesses">
-          <div class="round__guesses__column">
-            <div class="round__guesses__input">
-              <input
-                type="text"
-                id="college-input-${roundIndex}"
-                placeholder="NCAA school"
-                ${disabled ? 'disabled' : ''}
-              />
-              <ol class="autosuggest" id="autosuggest-list-${roundIndex}"></ol>
-            </div>
-            ${renderGuesses(college, guesses)}
+const isRoundFinished = (colleges, guesses) => {
+  const maxGuesses = getMaxGuesses(colleges);
+  return isRoundCorrect(colleges, guesses) || guesses.length === maxGuesses;
+};
+
+const renderGuesses = (colleges, guesses) => {
+  const maxGuesses = getMaxGuesses(colleges);
+
+  return [...Array(maxGuesses)].map((_, guessIndex) => {
+    const hasGuess = !!guesses[guessIndex];
+    const guess = guesses[guessIndex];
+    const isCorrect = colleges.includes(guess);
+
+    const guessText = guess || `Guess ${guessIndex + 1}`
+    const classes = Object.entries({
+      correct: hasGuess && isCorrect,
+      incorrect: hasGuess && !isCorrect,
+    }).reduce((acc, [k, v]) => v ? `${acc} ${k}` : acc, "");
+
+    return `<div class="row guess ${classes}">${guessText}</div>`;
+  }).join("");
+};
+
+const renderPlayerSection = ({ name, headshot, colleges, league, roundIndex, guesses }) =>
+  `
+    <div class="player">
+      <div class="round__player">
+        <img
+          class="round__player__headshot"
+          src="${getHeadshot({ headshot, league })}"
+          alt="${name}"
+        />
+        <h2 class="round__player__name">${name}</h2>
+      </div>
+      <div class="round__guesses">
+        <div class="round__guesses__column">
+          <div class="round__guesses__input">
+            <input
+              type="text"
+              id="college-input-${roundIndex}"
+              placeholder="NCAA school"
+              ${isRoundFinished(colleges, guesses) ? "disabled" : ""}
+            />
+            <ol class="autosuggest" id="autosuggest-list-${roundIndex}"></ol>
           </div>
+          ${renderGuesses(colleges, guesses)}
         </div>
       </div>
-    `
+    </div>
+  `;
+
+const renderResultEmoji = (guesses, roundIndex) => {
+  const colleges = todaysAnswers[roundIndex].colleges
+  const maxGuesses = getMaxGuesses(colleges);
+
+  return [...Array(maxGuesses)].map(
+    (_, i) => {
+      if (guesses.length <= i) {
+        return BLACK_SQUARE;
+      }
+
+      if (colleges.includes(guesses[i])) {
+        return GREEN_SQUARE;
+      }
+
+      return RED_SQUARE;
+    }
+  ).join("");
+};
+
+const renderResultModal = (todaysResults) => {
+  const resultEmojiHTML = todaysResults.map((guesses, roundIndex) => {
+    const leagueName = todaysAnswers[roundIndex].league.toLowerCase();
+    return `
+      <div class="league-results">
+        <img src="${getLeagueLogo(leagueName)}" />
+        <span>${renderResultEmoji(guesses, roundIndex)}</span>
+      </div>
+    `;
+  }).join("");
+  const resultEmojiText = `Where'd they go? #${gameNumber}\n` +
+    todaysResults.map((guesses, roundIndex) => renderResultEmoji(guesses, roundIndex)).join("\n") +
+    "\n";
+
+  const winner = todaysResults.every(
+    (guesses, roundIndex) => isRoundCorrect(todaysAnswers[roundIndex].colleges, guesses)
   );
+  const partialWinner = todaysResults.some(
+    (guesses, roundIndex) => isRoundCorrect(todaysAnswers[roundIndex].colleges, guesses)
+  );
+
+  let header = "AIR BALLLLLL";
+  if (winner) {
+    header = "<i>SWISHHHH</i>";
+  } else if (partialWinner) {
+    header = "1 for 1 ain't that bad";
+  }
+
+  const onCopy = () => {
+    console.log(resultEmojiText);
+    navigator.clipboard.writeText(resultEmojiText).then(() => {
+    const copied = document.querySelector(".copied-popup");
+    copied.style["opacity"] = "1";
+
+    setTimeout(() => {
+      copied.style["opacity"] = "0";
+    }, 1500);
+  });
+  }
+
+  const resultsModal = document.createElement("div");
+  resultsModal.className = "results-modal";
+  resultsModal.innerHTML = `
+    <button id="close-results">&#x2715;</button>
+    <h3 class="header">${header}</h3>
+    <p>Let's run it back tomorrow</p>
+    <div class="result-emoji">
+      ${resultEmojiHTML}
+    </div>
+    <button id="copy-results">Copy Results</button>
+  `;
+  const body = document.querySelector("body");
+  body.append(resultsModal);
+
+  const copyButton = document.querySelector("#copy-results");
+  copyButton.onclick = onCopy;
+
+  const closeButton = document.querySelector("#close-results");
+  closeButton.onclick = () => resultsModal.remove();
 };
 
 const updateResults = () => {
-  const todaysResults = JSON.parse(window.localStorage.getItem(todayKey) || '[[],[]]');
+  const todaysResults = JSON.parse(window.localStorage.getItem(todayKey) || "[[],[]]");
 
-  const gameZone = document.getElementById('game-zone');
+  const gameZone = document.getElementById("game-zone");
 
   const setupEventListeners = (roundIndex) => {
     const collegeInput = document.getElementById(`college-input-${roundIndex}`);
     const autosuggestList = document.getElementById(`autosuggest-list-${roundIndex}`);
 
-    collegeInput.addEventListener('input', (inputEvent) => {
+    collegeInput.addEventListener("input", (inputEvent) => {
       const inputValue = inputEvent.target.value;
       const suggestions = Object.keys(COLLEGES).filter(
         (college) => tokenizeCollege(college).some(
@@ -694,19 +794,17 @@ const updateResults = () => {
       if (suggestions.length > 0) {
         autosuggestList.innerHTML = suggestions.map(
           (suggestion) => `<li class="college">${suggestion}</li>`
-        ).join('');
+        ).join("");
 
-        Array.from(autosuggestList.getElementsByClassName('college')).map(
+        Array.from(autosuggestList.getElementsByClassName("college")).map(
           (collegeElement) => collegeElement.addEventListener(
-            'click',
+            "click",
             (clickEvent) => {
               const newResults = todaysResults.map((guesses, i) => {
-                if (
-                  roundIndex === i &&
-                  guesses.length < MAX_GUESSES &&
-                  !guesses.includes(todaysAnswers[i].college) &&
-                  i < todaysAnswers.length
-                ) {
+                const colleges = todaysAnswers[i].colleges;
+                const maxGuesses = getMaxGuesses(colleges);
+
+                if (roundIndex === i) {
                   return [...guesses, collegeElement.innerText];
                 }
 
@@ -718,18 +816,30 @@ const updateResults = () => {
           )
         );
       } else {
-        autosuggestList.innerHTML = '';
+        autosuggestList.innerHTML = "";
       }
     });
   };
 
-  gameZone.innerHTML = todaysResults.map((guesses, roundIndex) => {
+  gameZone.innerHTML = `<h3 class="game-number">#${gameNumber}</h3>` + todaysResults.map((guesses, roundIndex) => {
     return renderPlayerSection({ ...todaysAnswers[roundIndex], guesses, roundIndex });
-  }).join('<hr />');
+  }).join("<hr />");
 
-  todaysResults.forEach((_, roundIndex) => setupEventListeners(roundIndex));
+  let todaysGameComplete = true;
+
+  todaysResults.forEach((guesses, roundIndex) => {
+    setupEventListeners(roundIndex);
+
+    if (!isRoundFinished(todaysAnswers[roundIndex].colleges, guesses)) {
+      todaysGameComplete = false;
+    }
+  });
+
+  if (todaysGameComplete) {
+    renderResultModal(todaysResults);
+  }
 };
 
-window.addEventListener('load', function () {
+window.addEventListener("load", function () {
   updateResults();
 })
