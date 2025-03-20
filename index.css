@@ -101,6 +101,7 @@ body {
           .round__player__headshot {
             width: 5rem;
             height: 5rem;
+            object-fit: cover;
           }
         }
 
