@@ -700,19 +700,18 @@ const isRoundFinished = (colleges, guesses) => {
 const getRemainingConferences = (colleges, guesses) => {
   let remainingConferences = colleges.map((c) => COLLEGES[c]);
   guesses.forEach((g) => {
-    const confIndex = remainingConferences.indexOf(COLLEGES[g]);
-    remainingConferences = remainingConferences.filter((_, i) => confIndex !== i);
+    if (colleges.includes(g)) {
+      const confIndex = remainingConferences.indexOf(COLLEGES[g]);
+      remainingConferences = remainingConferences.filter((_, i) => confIndex !== i);
+    }
   });
 
-  console.log(colleges);
-  console.log(remainingConferences);
   return remainingConferences;
 };
 
 const isCorrectConference = (colleges, guesses, guessIndex) => {
-  const numConfsBefore = guessIndex === 0 ? colleges.length : getRemainingConferences(colleges, guesses.slice(0, guessIndex)).length;
-  const numConfsAfter = getRemainingConferences(colleges, guesses.slice(0, guessIndex + 1)).length;
-  return (numConfsBefore - numConfsAfter) > 0;
+  const confsBefore = guessIndex === 0 ? colleges.map((c) => COLLEGES[c]) : getRemainingConferences(colleges, guesses.slice(0, guessIndex));
+  return confsBefore.includes(COLLEGES[guesses[guessIndex]]);
 };
 
 const renderGuesses = (colleges, guesses) => {
