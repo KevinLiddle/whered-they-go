@@ -109,8 +109,33 @@ body {
         }
 
         .round__found {
+          display: flex;
+          flex-direction: column;
           margin-left: 1rem;
           font-style: italic;
+
+          .round__found__college__correct {
+            color: #6cc24a;
+
+            &:before {
+              content: "\002713";
+              margin-right: .5rem;
+            }
+          }
+
+          .round__found__college__incorrect {
+            color: #973638;
+
+            &:before {
+              content: "\002715";
+              margin-right: .5rem;
+            }
+          }
+
+          .round__found__college__pending:before {
+            content: "\002B58";
+            margin-right: .5rem;
+          }
         }
 
         .round__guesses {

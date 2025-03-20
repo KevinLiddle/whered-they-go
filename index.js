@@ -715,6 +715,20 @@ const renderGuesses = (colleges, guesses) => {
   }).join("");
 };
 
+const renderCollegeChecklist = (colleges, guesses, i) => {
+  const college = colleges[i];
+
+  if (guesses.includes(college)) {
+    return `<div class="round__found__college__correct">${college}</div>`;
+  }
+
+  if (isRoundFinished(colleges, guesses)) {
+    return `<div class="round__found__college__incorrect">${college}</div>`;
+  }
+
+  return `<div class="round__found__college__pending">School ${i + 1}</div>`;
+};
+
 const renderPlayerSection = ({ name, headshot, colleges, league, roundIndex, guesses }) => {
   const numCorrectGuesses = new Set(colleges).intersection(new Set(guesses)).size;
 
@@ -728,7 +742,7 @@ const renderPlayerSection = ({ name, headshot, colleges, league, roundIndex, gue
         />
         <h2 class="round__player__name">${name}</h2>
       </div>
-      <div class="round__found">${numCorrectGuesses}/${colleges.length} schools found</div>
+      <div class="round__found">${colleges.map((_, i) => renderCollegeChecklist(colleges, guesses, i))}</div>
       <div class="round__guesses">
         <div class="round__guesses__column">
           <div class="round__guesses__input">
