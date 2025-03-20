@@ -189,6 +189,8 @@ body {
             }
 
             .guess {
+              display: flex;
+              justify-content: space-between;
               color: #b1b3b3;
               margin-top: 1rem;
             }
@@ -199,20 +201,32 @@ body {
             }
 
             .guess.correct {
-              display: flex;
-              justify-content: space-between;
               background-color: rgba(0, 255, 0, 0.2);
               color: #000000;
               font-weight: 600;
-            }
 
-            .guess.correct:after {
-              content: 'Nice!';
-              display: inline-block;
-              font-style: italic;
-              font-size: 0.9rem;
-              margin-left: 1.5rem;
-              font-weight: 400;
+							&:after {
+								content: 'Nice!';
+								display: inline-block;
+								font-style: italic;
+								font-size: 0.9rem;
+								margin-left: 1.5rem;
+								font-weight: 400;
+							}
+						}
+
+            .guess.correctConference {
+              background-color: rgba(255, 255, 0, 0.4);
+              color: #000000;
+
+							&:after {
+								content: 'Correct Conference';
+								display: inline-block;
+								font-style: italic;
+								font-size: 0.9rem;
+								margin-left: 1.5rem;
+								font-weight: 400;
+							}
             }
           }
         }
