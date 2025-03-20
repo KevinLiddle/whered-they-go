@@ -664,8 +664,10 @@ const renderGuesses = (colleges, guesses) => {
   }).join("");
 };
 
-const renderPlayerSection = ({ name, headshot, colleges, league, roundIndex, guesses }) =>
-  `
+const renderPlayerSection = ({ name, headshot, colleges, league, roundIndex, guesses }) => {
+  const numCorrectGuesses = new Set(colleges).intersection(new Set(guesses)).size;
+
+  return `
     <div class="player">
       <div class="round__player">
         <img
@@ -675,6 +677,7 @@ const renderPlayerSection = ({ name, headshot, colleges, league, roundIndex, gue
         />
         <h2 class="round__player__name">${name}</h2>
       </div>
+      <div class="round__found">${numCorrectGuesses}/${colleges.length} schools found</div>
       <div class="round__guesses">
         <div class="round__guesses__column">
           <div class="round__guesses__input">
@@ -691,6 +694,7 @@ const renderPlayerSection = ({ name, headshot, colleges, league, roundIndex, gue
       </div>
     </div>
   `;
+};
 
 const renderResultEmoji = (guesses, roundIndex) => {
   const colleges = todaysAnswers[roundIndex].colleges
@@ -721,7 +725,7 @@ const renderResultModal = (todaysResults) => {
       </div>
     `;
   }).join("");
-  const resultEmojiText = `Where'd they go? #${gameNumber}\n` +
+  const resultEmojiText = `Where'd they go? Game Day #${gameNumber}\n` +
     todaysResults.map((guesses, roundIndex) => renderResultEmoji(guesses, roundIndex)).join("\n") +
     "\n";
 
@@ -740,7 +744,6 @@ const renderResultModal = (todaysResults) => {
   }
 
   const onCopy = () => {
-    console.log(resultEmojiText);
     navigator.clipboard.writeText(resultEmojiText).then(() => {
     const copied = document.querySelector(".copied-popup");
     copied.style["opacity"] = "1";
@@ -821,7 +824,7 @@ const updateResults = () => {
     });
   };
 
-  gameZone.innerHTML = `<h3 class="game-number">#${gameNumber}</h3>` + todaysResults.map((guesses, roundIndex) => {
+  gameZone.innerHTML = `<h3 class="game-number">Game Day #${gameNumber}</h3>` + todaysResults.map((guesses, roundIndex) => {
     return renderPlayerSection({ ...todaysAnswers[roundIndex], guesses, roundIndex });
   }).join("<hr />");
 
