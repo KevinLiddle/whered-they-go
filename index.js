@@ -791,7 +791,7 @@ const renderResultModal = (todaysResults) => {
   if (winner) {
     header = "<i>SWISHHHH</i>";
   } else if (partialWinner) {
-    header = "1 for 1 ain't that bad";
+    header = "1 for 2 ain't that bad";
   }
 
   const onCopy = () => {

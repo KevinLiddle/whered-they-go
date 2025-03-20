@@ -76,7 +76,7 @@ body {
       align-items: center;
       gap: 2rem;
       width: 100%;
-      margin-top: 2rem;
+      margin: 2rem 0 4rem;
 
       hr {
         height: 1px;
