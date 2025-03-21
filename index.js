@@ -902,6 +902,18 @@ const updateResults = () => {
                 return guesses;
               });
               window.localStorage.setItem(todayKey, JSON.stringify(newResults));
+              const gameFinished = newResults.every((guesses, i) => isRoundFinished(todaysAnswers[i].colleges, guesses));
+              if (gtag && gameFinished) {
+                try {
+                  const getNumCorrect =
+                    (i) => newResults[i].filter((g) => todaysAnswers[i].colleges.includes(g)).length;
+
+                  gtag('event', 'game_finished', {
+                    'nba_result': `${getNumCorrect(0)}/${todaysAnswers[0].colleges.length}/${newResults[0].length}/${getMaxGuesses(todaysAnswers[0].colleges)}`,
+                    'wnba_result': `${getNumCorrect(1)}/${todaysAnswers[1].colleges.length}/${newResults[1].length}/${getMaxGuesses(todaysAnswers[1].colleges)}`,
+                  });
+                } catch {}
+              }
               updateResults();
             }
           )
