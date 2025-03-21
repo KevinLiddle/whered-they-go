@@ -648,7 +648,7 @@ const COLLEGES = {
 
 const now = new Date();
 const TWENTY_FOUR_HOURS_IN_MILLIS = 86400000;
-const RELEASE_DAY = new Date("2025-03-20");
+const RELEASE_DAY = new Date("2025-03-20 00:00:00-0500");
 const MIN_GUESSES = 3;
 
 const BLACK_SQUARE = String.fromCodePoint(0x2B1B);
