@@ -120,6 +120,7 @@ body {
             &:before {
               content: "\002713";
               margin-right: .5rem;
+              font-style: normal;
             }
           }
 
@@ -129,12 +130,14 @@ body {
             &:before {
               content: "\002715";
               margin-right: .5rem;
+              font-style: normal;
             }
           }
 
           .round__found__college__pending:before {
             content: "\002B58";
             margin-right: .5rem;
+            font-style: normal;
           }
         }
 
