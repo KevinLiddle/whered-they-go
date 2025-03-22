@@ -16,6 +16,13 @@ const NBA_ANSWERS = [
     "playerId": "1626220"
   },
   {
+    "name": "Jordan Poole",
+    "colleges": [
+      "University of Michigan"
+    ],
+    "playerId": "1629673"
+  },
+  {
     "name": "Brandon Clarke",
     "colleges": [
       "San Jose State University",
@@ -24,11 +31,12 @@ const NBA_ANSWERS = [
     "playerId": "1629634"
   },
   {
-    "name": "Keon Ellis",
+    "name": "Caleb Martin",
     "colleges": [
-      "University of Alabama"
+      "North Carolina State University",
+      "University of Nevada - Reno"
     ],
-    "playerId": "1631165"
+    "playerId": "1628997"
   },
   {
     "name": "Jamal Murray",
@@ -38,13 +46,6 @@ const NBA_ANSWERS = [
     "playerId": "1627750"
   },
   {
-    "name": "Jordan Poole",
-    "colleges": [
-      "University of Michigan"
-    ],
-    "playerId": "1629673"
-  },
-  {
     "name": "Jonathan Isaac",
     "colleges": [
       "Florida State University"
@@ -52,25 +53,25 @@ const NBA_ANSWERS = [
     "playerId": "1628371"
   },
   {
-    "name": "Gary Payton II",
+    "name": "Alex Caruso",
     "colleges": [
-      "Oregon State University"
+      "Texas A&M University"
     ],
-    "playerId": "1627780"
+    "playerId": "1627936"
   },
   {
-    "name": "Kelly Oubre Jr.",
+    "name": "Christian Braun",
     "colleges": [
       "University of Kansas"
     ],
-    "playerId": "1626162"
+    "playerId": "1631128"
   },
   {
-    "name": "Onyeka Okongwu",
+    "name": "Jeff Green",
     "colleges": [
-      "University of Southern California"
+      "Georgetown University"
     ],
-    "playerId": "1630168"
+    "playerId": "201145"
   },
   {
     "name": "Trey Murphy III",
@@ -95,11 +96,12 @@ const NBA_ANSWERS = [
     "playerId": "1628386"
   },
   {
-    "name": "Jrue Holiday",
+    "name": "Andrew Nembhard",
     "colleges": [
-      "University of California - Los Angeles - UCLA"
+      "University of Florida",
+      "Gonzaga University"
     ],
-    "playerId": "201950"
+    "playerId": "1629614"
   },
   {
     "name": "Anthony Black",
@@ -117,11 +119,12 @@ const NBA_ANSWERS = [
     "playerId": "1629661"
   },
   {
-    "name": "Santi Aldama",
+    "name": "Austin Reaves",
     "colleges": [
-      "Loyola University Maryland"
+      "Wichita State University",
+      "University of Oklahoma"
     ],
-    "playerId": "1630583"
+    "playerId": "1630559"
   },
   {
     "name": "Kyle Kuzma",
@@ -267,11 +270,11 @@ const WNBA_ANSWERS = [
     "playerId": "203827"
   },
   {
-    "name": "Queen Egbo",
+    "name": "Teaira McCowan",
     "colleges": [
-      "Baylor University"
+      "Mississippi State University"
     ],
-    "playerId": "1631031"
+    "playerId": "1629479"
   },
   {
     "name": "Betnijah Laney-Hamilton",
@@ -676,7 +679,7 @@ const todaysAnswers = [
 const getLeagueLogo = (league) => `./images/${league.toLowerCase()}-logo.png`;
 
 const tokenizeCollege = (college, tokens = []) => {
-  const trimmedCollege = college.trim();
+  const trimmedCollege = college.trim().replaceAll(/[^a-zA-Z0-9 ]/g, "");
   const spaceIndex = trimmedCollege.indexOf(" ");
   const newTokens = [...tokens, trimmedCollege];
 
