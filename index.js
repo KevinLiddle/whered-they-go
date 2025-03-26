@@ -764,7 +764,7 @@ const renderPlayerSection = ({ name, headshot, colleges, league, roundIndex, gue
         />
         <h2 class="round__player__name">${name}</h2>
       </div>
-      <div class="round__found">${colleges.map((_, i) => renderCollegeChecklist(colleges, guesses, i))}</div>
+      <div class="round__found">${colleges.map((_, i) => renderCollegeChecklist(colleges, guesses, i)).join('')}</div>
       <div class="round__guesses">
         <div class="round__guesses__column">
           <div class="round__guesses__input">
