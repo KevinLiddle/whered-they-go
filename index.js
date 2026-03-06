@@ -1,657 +1,703 @@
 const NBA_ANSWERS = [
   {
-    "name": "Quentin Grimes",
+    "name": "Jeremiah Fears",
     "colleges": [
-      "University of Kansas",
-      "University of Houston"
+      "University of Oklahoma",
     ],
-    "playerId": "1629656"
+    "playerId": "1642847"
   },
   {
-    "name": "Royce O'Neale",
+    "name": "Gilbert Arenas",
     "colleges": [
-      "University of Denver",
-      "Baylor University"
+      "University of Arizona",
     ],
-    "playerId": "1626220"
+    "playerId": "2240"
   },
   {
-    "name": "Jordan Poole",
+    "name": "Jalen Williams",
     "colleges": [
-      "University of Michigan"
+      "Santa Clara University",
     ],
-    "playerId": "1629673"
+    "playerId": "1631114"
   },
   {
-    "name": "Brandon Clarke",
+    "name": "Pascal Siakam",
     "colleges": [
-      "San Jose State University",
-      "Gonzaga University"
+      "New Mexico State University",
     ],
-    "playerId": "1629634"
+    "playerId": "1627783"
   },
   {
-    "name": "Caleb Martin",
+    "name": "Michael Carter-Williams",
     "colleges": [
-      "North Carolina State University",
-      "University of Nevada - Reno"
+      "Syracuse University",
     ],
-    "playerId": "1628997"
+    "playerId": "203487"
   },
   {
-    "name": "Jamal Murray",
+    "name": "Dejounte Murray",
     "colleges": [
-      "University of Kentucky"
+      "University of Washington",
     ],
-    "playerId": "1627750"
+    "playerId": "1627749"
   },
   {
-    "name": "Jonathan Isaac",
+    "name": "Andre Drummond",
     "colleges": [
-      "Florida State University"
+      "University of Connecticut",
     ],
-    "playerId": "1628371"
+    "playerId": "203083"
   },
   {
-    "name": "Alex Caruso",
+    "name": "Paul Reed",
     "colleges": [
-      "Texas A&M University"
+      "DePaul University",
     ],
-    "playerId": "1627936"
+    "playerId": "1630194"
   },
   {
-    "name": "Christian Braun",
+    "name": "",
     "colleges": [
-      "University of Kansas"
+      "",
     ],
-    "playerId": "1631128"
+    "playerId": ""
   },
   {
-    "name": "Jeff Green",
+    "name": "",
     "colleges": [
-      "Georgetown University"
+      "",
     ],
-    "playerId": "201145"
+    "playerId": ""
   },
   {
-    "name": "Trey Murphy III",
+    "name": "",
     "colleges": [
-      "Rice University",
-      "University of Virginia"
+      "",
     ],
-    "playerId": "1630530"
+    "playerId": ""
   },
   {
-    "name": "Darius Garland",
+    "name": "",
     "colleges": [
-      "Vanderbilt University"
+      "",
     ],
-    "playerId": "1629636"
+    "playerId": ""
   },
   {
-    "name": "Jarrett Allen",
+    "name": "",
     "colleges": [
-      "University of Texas - Austin"
+      "",
     ],
-    "playerId": "1628386"
+    "playerId": ""
   },
   {
-    "name": "Andrew Nembhard",
+    "name": "",
     "colleges": [
-      "University of Florida",
-      "Gonzaga University"
+      "",
     ],
-    "playerId": "1629614"
+    "playerId": ""
   },
   {
-    "name": "Anthony Black",
+    "name": "",
     "colleges": [
-      "University of Arkansas"
+      "",
     ],
-    "playerId": "1641710"
+    "playerId": ""
   },
   {
-    "name": "Cameron Johnson",
+    "name": "",
     "colleges": [
-      "University of Pittsburgh",
-      "University of North Carolina at Chapel Hill",
+      "",
     ],
-    "playerId": "1629661"
+    "playerId": ""
   },
   {
-    "name": "Austin Reaves",
+    "name": "",
     "colleges": [
-      "Wichita State University",
-      "University of Oklahoma"
+      "",
     ],
-    "playerId": "1630559"
+    "playerId": ""
   },
   {
-    "name": "Kyle Kuzma",
+    "name": "",
     "colleges": [
-      "University of Utah"
+      "",
     ],
-    "playerId": "1628398"
+    "playerId": ""
   },
   {
-    "name": "T.J. McConnell",
+    "name": "",
     "colleges": [
-      "Duquesne University",
-      "University of Arizona"
+      "",
     ],
-    "playerId": "204456"
-  }
+    "playerId": ""
+  },
+  {
+    "name": "",
+    "colleges": [
+      "",
+    ],
+    "playerId": ""
+  },
+  {
+    "name": "",
+    "colleges": [
+      "",
+    ],
+    "playerId": ""
+  },
 ];
 
 const WNBA_ANSWERS = [
   {
-    "name": "Kelsey Mitchell",
+    "name": "",
     "colleges": [
-      "Ohio State University"
+      ""
     ],
-    "playerId": "1628909"
+    "playerId": ""
   },
   {
-    "name": "Alyssa Thomas",
+    "name": "",
     "colleges": [
-      "University of Maryland"
+      ""
     ],
-    "playerId": "203826"
+    "playerId": ""
   },
   {
-    "name": "Skylar Diggins-Smith",
+    "name": "",
     "colleges": [
-      "University of Notre Dame"
+      ""
     ],
-    "playerId": "203400"
+    "playerId": ""
   },
   {
-    "name": "Maddy Siegrist",
+    "name": "",
     "colleges": [
-      "Villanova University"
+      ""
     ],
-    "playerId": "1641652"
+    "playerId": ""
   },
   {
-    "name": "Ariel Atkins",
+    "name": "",
     "colleges": [
-      "University of Texas - Austin"
+      ""
     ],
-    "playerId": "1628878"
+    "playerId": ""
   },
   {
-    "name": "Satou Sabally",
+    "name": "",
     "colleges": [
-      "University of Oregon"
+      ""
     ],
-    "playerId": "1630149"
+    "playerId": ""
   },
   {
-    "name": "Alysha Clark",
+    "name": "",
     "colleges": [
-      "Middle Tennessee State University",
-      "Belmont University"
+      ""
     ],
-    "playerId": "202252"
+    "playerId": ""
   },
   {
-    "name": "Emily Engstler",
+    "name": "",
     "colleges": [
-      "Syracuse University",
-      "University of Louisville"
+      ""
     ],
-    "playerId": "1631083"
+    "playerId": ""
   },
   {
-    "name": "Stefanie Dolson",
+    "name": "",
     "colleges": [
-      "University of Connecticut"
+      ""
     ],
-    "playerId": "203828"
+    "playerId": ""
   },
   {
-    "name": "Kamilla Cardoso",
+    "name": "",
     "colleges": [
-      "Syracuse University",
-      "University of South Carolina"
+      ""
     ],
-    "playerId": "1642289"
+    "playerId": ""
   },
   {
-    "name": "Kelsey Plum",
+    "name": "",
     "colleges": [
-      "University of Washington"
+      ""
     ],
-    "playerId": "1628276"
+    "playerId": ""
   },
   {
-    "name": "Lexie Brown",
+    "name": "",
     "colleges": [
-      "University of Maryland",
-      "Duke University"
+      ""
     ],
-    "playerId": "1628882"
+    "playerId": ""
   },
   {
-    "name": "Alanna Smith",
+    "name": "",
     "colleges": [
-      "Stanford University"
+      ""
     ],
-    "playerId": "1629501"
+    "playerId": ""
   },
   {
-    "name": "Diamond DeShields",
+    "name": "",
     "colleges": [
-      "University of North Carolina at Chapel Hill",
-      "University of Tennessee"
+      ""
     ],
-    "playerId": "1628890"
+    "playerId": ""
   },
   {
-    "name": "Jonquel Jones",
+    "name": "",
     "colleges": [
-      "Clemson University",
-      "George Washington University"
+      ""
     ],
-    "playerId": "1627673"
+    "playerId": ""
   },
   {
-    "name": "Courtney Vandersloot",
+    "name": "",
     "colleges": [
-      "Gonzaga University"
+      ""
     ],
-    "playerId": "202664"
+    "playerId": ""
   },
   {
-    "name": "Natasha Howard",
+    "name": "",
     "colleges": [
-      "Florida State University"
+      ""
     ],
-    "playerId": "203827"
+    "playerId": ""
   },
   {
-    "name": "Teaira McCowan",
+    "name": "",
     "colleges": [
-      "Mississippi State University"
+      ""
     ],
-    "playerId": "1629479"
+    "playerId": ""
   },
   {
-    "name": "Betnijah Laney-Hamilton",
+    "name": "",
     "colleges": [
-      "Rutgers University"
+      ""
     ],
-    "playerId": "204335"
-  }
+    "playerId": ""
+  },
+  {
+    "name": "",
+    "colleges": [
+      ""
+    ],
+    "playerId": ""
+  },
+  {
+    "name": "",
+    "colleges": [
+      ""
+    ],
+    "playerId": ""
+  },
 ];
 
+const ACC = "Atlantic Coast Conference";
+const AMERICAN = "American Athletic Conference";
+const AMERICA_EAST = "America East Conference";
+const ASUN = "ASUN Conference";
+const ATLANTIC_10 = "Atlantic 10 Conference";
+const BIG_10 = "Big 10";
+const BIG_12 = "Big 12";
+const BIG_EAST = "Big East Conference";
+const BIG_SKY = "Big Sky Conference";
+const BIG_SOUTH = "Big South Conference";
+const BIG_WEST = "Big West Conference";
+const CAA = "Coastal Athletic Association";
+const CUSA = "Conference USA";
+const HORIZON = "Horizon League";
+const IVY_LEAGUE = "Ivy League";
+const METRO_ATLANTIC = "Metro Atlantic Athletic Conference";
+const MAC = "Mid-American Conference";
+const MID_EASTERN = "Mid-Eastern Athletic Conference";
+const MISSOURI_VALLEY = "Missouri Valley Conference";
+const MOUNTAIN_WEST = "Mountain West Conference";
+const NORTHEAST = "Northeast Conference";
+const OHIO_VALLEY = "Ohio Valley Conference";
+const PAC_12 = "Pacific-12 Conference";
+const PATRIOT = "Patriot League";
+const SEC = "Southeastern Conference";
+const SOUTHERN = "Southern Conference";
+const SOUTHLAND = "Southland Conference";
+const SUMMIT = "Summit League";
+const SUN_BELT = "Sun Belt Conference";
+const SWAC = "Southwestern Athletic Conference";
+const WAC = "Western Athletic Conference";
+const WCC = "West Coast Conference";
+
 const COLLEGES = {
-  "Abilene Christian University": "Western Athletic Conference",
-  "Alabama A&M University": "Southwestern Athletic Conference",
-  "Alabama State University": "Southwestern Athletic Conference",
-  "Alcorn State University": "Southwestern Athletic Conference",
-  "American University": "Patriot League",
-  "Appalachian State University": "Sun Belt Conference",
-  "Arizona State University": "Big 12 Conference",
-  "Arkansas State University": "Sun Belt Conference",
-  "Auburn University": "Southeastern Conference",
-  "Austin Peay State University": "ASUN Conference",
-  "Ball State University": "Mid-American Conference",
-  "Baylor University": "Big 12 Conference",
-  "Bellarmine University": "ASUN Conference",
-  "Belmont University": "Missouri Valley Conference",
-  "Bethune-Cookman University": "Mid-Eastern Athletic Conference",
-  "Boise State University": "Mountain West Conference",
-  "Boston College": "Atlantic Coast Conference",
-  "Boston University": "Patriot League",
-  "Bowling Green State University": "Mid-American Conference",
-  "Bradley University": "Missouri Valley Conference",
-  "Brigham Young University": "Big 12 Conference",
-  "Brown University": "Ivy League",
-  "Bryant University": "America East Conference",
-  "Bucknell University": "Patriot League",
-  "Butler University": "Big East Conference",
-  "California Baptist University": "Western Athletic Conference",
-  "California Polytechnic State University - San Luis Obispo": "Big West Conference",
-  "California State University - Bakersfield": "Big West Conference",
-  "California State University - Fresno": "Mountain West Conference",
-  "California State University - Fullerton": "Big West Conference",
-  "California State University - Long Beach": "Big West Conference",
-  "California State University - Northridge": "Big West Conference",
-  "California State University - Sacramento": "Big Sky Conference",
-  "Campbell University": "Big South Conference",
-  "Canisius College": "Metro Atlantic Athletic Conference",
-  "Central Connecticut State University": "Northeast Conference",
-  "Central Michigan University": "Mid-American Conference",
-  "Charleston Southern University": "Big South Conference",
-  "Chicago State University": "Northeast Conference",
-  "Clemson University": "Atlantic Coast Conference",
-  "Cleveland State University": "Horizon League",
-  "Coastal Carolina University": "Sun Belt Conference",
-  "Colgate University": "Patriot League",
-  "College of Charleston": "Coastal Athletic Association",
-  "College of the Holy Cross": "Patriot League",
-  "Colorado State University": "Mountain West Conference",
-  "Columbia University": "Ivy League",
-  "Coppin State University": "Mid-Eastern Athletic Conference",
-  "Cornell University": "Ivy League",
-  "Creighton University": "Big East Conference",
-  "Dartmouth College": "Ivy League",
-  "Davidson College": "Atlantic 10 Conference",
-  "Delaware State University": "Mid-Eastern Athletic Conference",
-  "DePaul University": "Big East Conference",
-  "Drake University": "Missouri Valley Conference",
-  "Drexel University": "Coastal Athletic Association",
-  "Duke University": "Atlantic Coast Conference",
-  "Duquesne University": "Atlantic 10 Conference",
-  "East Carolina University": "American Athletic Conference",
-  "East Tennessee State University": "Southern Conference",
-  "Eastern Illinois University": "Ohio Valley Conference",
-  "Eastern Kentucky University": "ASUN Conference",
-  "Eastern Michigan University": "Mid-American Conference",
-  "Eastern Washington University": "Big Sky Conference",
-  "Elon University": "Coastal Athletic Association",
-  "Fairfield University": "Metro Atlantic Athletic Conference",
-  "Fairleigh Dickinson University": "Northeast Conference",
-  "Florida A&M University": "Southwestern Athletic Conference",
-  "Florida Atlantic University": "American Athletic Conference",
-  "Florida Gulf Coast University": "ASUN Conference",
-  "Florida International University": "Conference USA",
-  "Florida State University": "Atlantic Coast Conference",
-  "Fordham University": "Atlantic 10 Conference",
-  "Furman University": "Southern Conference",
-  "Gardner-Webb University": "Big South Conference",
-  "George Mason University": "Atlantic 10 Conference",
-  "George Washington University": "Atlantic 10 Conference",
-  "Georgetown University": "Big East Conference",
-  "Georgia Southern University": "Sun Belt Conference",
-  "Georgia State University": "Sun Belt Conference",
-  "Georgia Tech": "Atlantic Coast Conference",
-  "Gonzaga University": "West Coast Conference",
-  "Grambling State University": "Southwestern Athletic Conference",
-  "Grand Canyon University": "Western Athletic Conference",
-  "Hampton University": "Coastal Athletic Association",
-  "Harvard University": "Ivy League",
-  "High Point University": "Big South Conference",
-  "Hofstra University": "Coastal Athletic Association",
-  "Houston Christian University": "Southland Conference",
-  "Howard University": "Mid-Eastern Athletic Conference",
-  "Idaho State University": "Big Sky Conference",
-  "Illinois State University": "Missouri Valley Conference",
-  "Indiana State University": "Missouri Valley Conference",
-  "Indiana University": "Big Ten Conference",
-  "Indiana University-Purdue University - Indianapolis (IUPUI)": "Horizon League",
-  "Iona University": "Metro Atlantic Athletic Conference",
-  "Iowa State University": "Big 12 Conference",
-  "Jackson State University": "Southwestern Athletic Conference",
-  "Jacksonville State University": "ASUN Conference",
-  "Jacksonville University": "ASUN Conference",
-  "James Madison University": "Sun Belt Conference",
-  "Kansas State University": "Big 12 Conference",
-  "Kennesaw State University": "ASUN Conference",
-  "Kent State University": "Mid-American Conference",
-  "La Salle University": "Atlantic 10 Conference",
-  "Lafayette College": "Patriot League",
-  "Lamar University": "Southland Conference",
-  "Lehigh University": "Patriot League",
-  "Liberty University": "Conference USA",
-  "Lindenwood University": "Ohio Valley Conference",
-  "Lipscomb University": "ASUN Conference",
-  "Long Island University": "Northeast Conference",
-  "Longwood University": "Big South Conference",
-  "Louisiana State University (LSU)": "Southeastern Conference",
-  "Louisiana Tech University": "Conference USA",
-  "Loyola Marymount University": "West Coast Conference",
-  "Loyola University Chicago": "Atlantic 10 Conference",
-  "Loyola University Maryland": "Patriot League",
-  "Manhattan College": "Metro Atlantic Athletic Conference",
-  "Marist College": "Metro Atlantic Athletic Conference",
-  "Marquette University": "Big East Conference",
-  "Marshall University": "Sun Belt Conference",
-  "McNeese State University": "Southland Conference",
-  "Mercer University": "Southern Conference",
-  "Merrimack College": "Northeast Conference",
-  "Miami University": "Mid-American Conference",
-  "Michigan State University": "Big Ten Conference",
-  "Middle Tennessee State University": "Conference USA",
-  "Mississippi State University": "Southeastern Conference",
-  "Mississippi Valley State University": "Southwestern Athletic Conference",
-  "Missouri State University": "Missouri Valley Conference",
-  "Monmouth University": "Coastal Athletic Association",
-  "Montana State University": "Big Sky Conference",
-  "Morehead State University": "Ohio Valley Conference",
-  "Morgan State University": "Mid-Eastern Athletic Conference",
-  "Mount St. Mary's University": "Metro Atlantic Athletic Conference",
-  "Murray State University": "Missouri Valley Conference",
-  "New Jersey Institute of Technology": "America East Conference",
-  "New Mexico State University": "Conference USA",
-  "Niagara University": "Metro Atlantic Athletic Conference",
-  "Nicholls State University": "Southland Conference",
-  "Norfolk State University": "Mid-Eastern Athletic Conference",
-  "North Carolina A&T State University": "Coastal Athletic Association",
-  "North Carolina Central University": "Mid-Eastern Athletic Conference",
-  "North Carolina State University": "Atlantic Coast Conference",
-  "North Dakota State University": "Summit League",
-  "Northeastern University": "Coastal Athletic Association",
-  "Northern Arizona University": "Big Sky Conference",
-  "Northern Illinois University": "Mid-American Conference",
-  "Northern Kentucky University": "Horizon League",
-  "Northwestern State University of Louisiana": "Southland Conference",
-  "Northwestern University": "Big Ten Conference",
-  "Oakland University": "Horizon League",
-  "Ohio State University": "Big Ten Conference",
-  "Ohio University": "Mid-American Conference",
-  "Oklahoma State University": "Big 12 Conference",
-  "Old Dominion University": "Sun Belt Conference",
-  "Oral Roberts University": "Summit League",
-  "Oregon State University": "Pacific-12 Conference",
-  "Penn State": "Big Ten Conference",
-  "Pepperdine University": "West Coast Conference",
-  "Portland State University": "Big Sky Conference",
-  "Prairie View A & M University": "Southwestern Athletic Conference",
-  "Presbyterian College": "Big South Conference",
-  "Princeton University": "Ivy League",
-  "Providence College": "Big East Conference",
-  "Purdue University": "Big Ten Conference",
-  "Purdue University - Fort Wayne": "Horizon League",
-  "Queens University of Charlotte": "ASUN Conference",
-  "Quinnipiac University": "Metro Atlantic Athletic Conference",
-  "Radford University": "Big South Conference",
-  "Rice University": "American Athletic Conference",
-  "Rider University": "Metro Atlantic Athletic Conference",
-  "Robert Morris University - Pennsylvania": "Horizon League",
-  "Rutgers University": "Big Ten Conference",
-  "Sacred Heart University": "Northeast Conference",
-  "Saint Francis University": "Northeast Conference",
-  "Saint Joseph's University": "Atlantic 10 Conference",
-  "Saint Louis University": "Atlantic 10 Conference",
-  "Saint Mary's College of California": "West Coast Conference",
-  "Saint Peter's University": "Metro Atlantic Athletic Conference",
-  "Sam Houston State University": "Conference USA",
-  "Samford University": "Southern Conference",
-  "San Diego State University": "Mountain West Conference",
-  "San Jose State University": "Mountain West Conference",
-  "Santa Clara University": "West Coast Conference",
-  "Seattle University": "Western Athletic Conference",
-  "Seton Hall University": "Big East Conference",
-  "Siena College": "Metro Atlantic Athletic Conference",
-  "South Carolina State University": "Mid-Eastern Athletic Conference",
-  "South Dakota State University": "Summit League",
-  "Southeast Missouri State University": "Ohio Valley Conference",
-  "Southeastern Louisiana University": "Southland Conference",
-  "Southern Illinois University Carbondale": "Missouri Valley Conference",
-  "Southern Illinois University Edwardsville": "Ohio Valley Conference",
-  "Southern Methodist University - SMU": "Atlantic Coast Conference",
-  "Southern University & A&M College": "Southwestern Athletic Conference",
-  "Southern Utah University": "Western Athletic Conference",
-  "St. Bonaventure University": "Atlantic 10 Conference",
-  "St. Francis College": "Northeast Conference",
-  "St. John's University - New York": "Big East Conference",
-  "Stanford University": "Atlantic Coast Conference",
-  "Stephen F Austin State University": "Southland Conference",
-  "Stetson University": "ASUN Conference",
-  "Stonehill College": "Northeast Conference",
-  "SUNY Binghamton University": "America East Conference",
-  "SUNY Stony Brook University": "Coastal Athletic Association",
-  "SUNY University at Albany": "America East Conference",
-  "SUNY University at Buffalo": "Mid-American Conference",
-  "Syracuse University": "Atlantic Coast Conference",
-  "Tarleton State University": "Western Athletic Conference",
-  "Temple University": "American Athletic Conference",
-  "Tennessee State University": "Ohio Valley Conference",
-  "Texas A&M University": "Southeastern Conference",
-  "Texas A&M University - Commerce": "Southland Conference",
-  "Texas A&M University - Corpus Christi": "Southland Conference",
-  "Texas Christian University": "Big 12 Conference",
-  "Texas Southern University": "Southwestern Athletic Conference",
-  "Texas State University": "Sun Belt Conference",
-  "Texas Tech University": "Big 12 Conference",
-  "The Citadel": "Southern Conference",
-  "Towson University": "Coastal Athletic Association",
-  "Troy University": "Sun Belt Conference",
-  "Tulane University": "American Athletic Conference",
-  "United States Air Force Academy": "Mountain West Conference",
-  "United States Military Academy": "Patriot League",
-  "United States Naval Academy": "Patriot League",
-  "University of Akron": "Mid-American Conference",
-  "University of Alabama": "Southeastern Conference",
-  "University of Alabama - Birmingham": "American Athletic Conference",
-  "University of Arizona": "Big 12 Conference",
-  "University of Arkansas": "Southeastern Conference",
-  "University of Arkansas at Little Rock": "Ohio Valley Conference",
-  "University of Arkansas at Pine Bluff": "Southwestern Athletic Conference",
-  "University of California - Berkeley": "Atlantic Coast Conference",
-  "University of California - Davis": "Big West Conference",
-  "University of California - Irvine": "Big West Conference",
-  "University of California - Los Angeles - UCLA": "Big Ten Conference",
-  "University of California - Riverside": "Big West Conference",
-  "University of California - San Diego": "Big West Conference",
-  "University of California - Santa Barbara": "Big West Conference",
-  "University of Central Arkansas": "ASUN Conference",
-  "University of Central Florida": "Big 12 Conference",
-  "University of Cincinnati": "Big 12 Conference",
-  "University of Colorado - Boulder": "Big 12 Conference",
-  "University of Connecticut": "Big East Conference",
-  "University of Dayton": "Atlantic 10 Conference",
-  "University of Delaware": "Coastal Athletic Association",
-  "University of Denver": "Summit League",
-  "University of Detroit Mercy": "Horizon League",
-  "University of Evansville": "Missouri Valley Conference",
-  "University of Florida": "Southeastern Conference",
-  "University of Georgia": "Southeastern Conference",
-  "University of Hawaii at Manoa": "Big West Conference",
-  "University of Houston": "Big 12 Conference",
-  "University of Idaho": "Big Sky Conference",
-  "University of Illinois": "Big Ten Conference",
-  "University of Illinois at Chicago": "Missouri Valley Conference",
-  "University of Iowa": "Big Ten Conference",
-  "University of Kansas": "Big 12 Conference",
-  "University of Kentucky": "Southeastern Conference",
-  "University of Louisiana": "Sun Belt Conference",
-  "University of Louisiana - Monroe": "Sun Belt Conference",
-  "University of Louisville": "Atlantic Coast Conference",
-  "University of Maine": "America East Conference",
-  "University of Maryland": "Big Ten Conference",
-  "University of Maryland - Baltimore County": "America East Conference",
-  "University of Maryland Eastern Shore": "Mid-Eastern Athletic Conference",
-  "University of Massachusetts - Amherst": "Atlantic 10 Conference",
-  "University of Massachusetts - Lowell": "America East Conference",
-  "University of Memphis": "American Athletic Conference",
-  "University of Miami": "Atlantic Coast Conference",
-  "University of Michigan": "Big Ten Conference",
-  "University of Minnesota": "Big Ten Conference",
-  "University of Mississippi": "Southeastern Conference",
-  "University of Missouri": "Southeastern Conference",
-  "University of Missouri - Kansas City": "Summit League",
-  "University of Montana": "Big Sky Conference",
-  "University of Nebraska": "Big Ten Conference",
-  "University of Nebraska at Omaha": "Summit League",
-  "University of Nevada - Las Vegas": "Mountain West Conference",
-  "University of Nevada - Reno": "Mountain West Conference",
-  "University of New Hampshire": "America East Conference",
-  "University of New Mexico": "Mountain West Conference",
-  "University of New Orleans": "Southland Conference",
-  "University of North Alabama": "ASUN Conference",
-  "University of North Carolina - Greensboro": "Southern Conference",
-  "University of North Carolina - Wilmington": "Coastal Athletic Association",
-  "University of North Carolina Asheville": "Big South Conference",
-  "University of North Carolina at Chapel Hill": "Atlantic Coast Conference",
-  "University of North Carolina at Charlotte": "American Athletic Conference",
-  "University of North Dakota": "Summit League",
-  "University of North Florida": "ASUN Conference",
-  "University of North Texas": "American Athletic Conference",
-  "University of Northern Colorado": "Big Sky Conference",
-  "University of Northern Iowa": "Missouri Valley Conference",
-  "University of Notre Dame": "Atlantic Coast Conference",
-  "University of Oklahoma": "Southeastern Conference",
-  "University of Oregon": "Big Ten Conference",
-  "University of Pennsylvania - Penn": "Ivy League",
-  "University of Pittsburgh": "Atlantic Coast Conference",
-  "University of Portland": "West Coast Conference",
-  "University of Rhode Island": "Atlantic 10 Conference",
-  "University of Richmond": "Atlantic 10 Conference",
-  "University of San Diego": "West Coast Conference",
-  "University of San Francisco": "West Coast Conference",
-  "University of South Alabama": "Sun Belt Conference",
-  "University of South Carolina": "Southeastern Conference",
-  "University of South Carolina - Upstate": "Big South Conference",
-  "University of South Dakota": "Summit League",
-  "University of South Florida": "American Athletic Conference",
-  "University of Southern California": "Big Ten Conference",
-  "University of Southern Mississippi": "Sun Belt Conference",
-  "University of St. Thomas - Minnesota": "Summit League",
-  "University of Tennessee": "Southeastern Conference",
-  "University of Tennessee - Chattanooga": "Southern Conference",
-  "University of Tennessee - Martin": "Ohio Valley Conference",
-  "University of Texas - Arlington": "Western Athletic Conference",
-  "University of Texas - Austin": "Southeastern Conference",
-  "University of Texas - El Paso": "Conference USA",
-  "University of Texas - Rio Grande Valley": "Western Athletic Conference",
-  "University of Texas - San Antonio": "American Athletic Conference",
-  "University of the Incarnate Word": "Southland Conference",
-  "University of the Pacific": "West Coast Conference",
-  "University of Toledo": "Mid-American Conference",
-  "University of Tulsa": "American Athletic Conference",
-  "University of Utah": "Big 12 Conference",
-  "University of Vermont": "America East Conference",
-  "University of Virginia": "Atlantic Coast Conference",
-  "University of Washington": "Big Ten Conference",
-  "University of Wisconsin": "Big Ten Conference",
-  "University of Wisconsin - Green Bay": "Horizon League",
-  "University of Wisconsin - Milwaukee": "Horizon League",
-  "University of Wyoming": "Mountain West Conference",
-  "Utah State University": "Mountain West Conference",
-  "Utah Tech University (Formerly Dixie State University)": "Western Athletic Conference",
-  "Utah Valley University": "Western Athletic Conference",
-  "Valparaiso University": "Missouri Valley Conference",
-  "Vanderbilt University": "Southeastern Conference",
-  "Villanova University": "Big East Conference",
-  "Virginia Commonwealth University": "Atlantic 10 Conference",
-  "Virginia Military Institute - VMI": "Big South Conference",
-  "Virginia Tech": "Atlantic Coast Conference",
-  "Wagner College": "Northeast Conference",
-  "Wake Forest University": "Atlantic Coast Conference",
-  "Washington State University": "West Coast Conference",
-  "Weber State University": "Big Sky Conference",
-  "West Virginia University": "Big 12 Conference",
-  "Western Carolina University": "Southern Conference",
-  "Western Illinois University": "Ohio Valley Conference",
-  "Western Kentucky University": "Conference USA",
-  "Western Michigan University": "Mid-American Conference",
-  "Wichita State University": "American Athletic Conference",
-  "William & Mary": "Coastal Athletic Association",
-  "Winthrop University": "Big South Conference",
-  "Wofford College": "Southern Conference",
-  "Wright State University": "Horizon League",
-  "Xavier University": "Big East Conference",
-  "Yale University": "Ivy League",
-  "Youngstown State University": "Horizon League",
+  "Abilene Christian University": WAC,
+  "Alabama A&M University": SWAC,
+  "Alabama State University": SWAC,
+  "Alcorn State University": SWAC,
+  "American University": PATRIOT,
+  "Appalachian State University": SUN_BELT,
+  "Arizona State University": BIG_12,
+  "Arkansas State University": SUN_BELT,
+  "Auburn University": SEC,
+  "Austin Peay State University": ASUN,
+  "Ball State University": MAC,
+  "Baylor University": BIG_12,
+  "Bellarmine University": ASUN,
+  "Belmont University": MISSOURI_VALLEY,
+  "Bethune-Cookman University": MID_EASTERN,
+  "Boise State University": MOUNTAIN_WEST,
+  "Boston College": ACC,
+  "Boston University": PATRIOT,
+  "Bowling Green State University": MAC,
+  "Bradley University": MISSOURI_VALLEY,
+  "Brigham Young University": BIG_12,
+  "Brown University": IVY_LEAGUE,
+  "Bryant University": AMERICA_EAST,
+  "Bucknell University": PATRIOT,
+  "Butler University": BIG_EAST,
+  "California Baptist University": WAC,
+  "California Polytechnic State University - San Luis Obispo": BIG_WEST,
+  "California State University - Bakersfield": BIG_WEST,
+  "California State University - Fresno": MOUNTAIN_WEST,
+  "California State University - Fullerton": BIG_WEST,
+  "California State University - Long Beach": BIG_WEST,
+  "California State University - Northridge": BIG_WEST,
+  "California State University - Sacramento": BIG_SKY,
+  "Campbell University": BIG_SOUTH,
+  "Canisius College": METRO_ATLANTIC,
+  "Central Connecticut State University": NORTHEAST,
+  "Central Michigan University": MAC,
+  "Charleston Southern University": BIG_SOUTH,
+  "Chicago State University": NORTHEAST,
+  "Clemson University": ACC,
+  "Cleveland State University": HORIZON,
+  "Coastal Carolina University": SUN_BELT,
+  "Colgate University": PATRIOT,
+  "College of Charleston": CAA,
+  "College of the Holy Cross": PATRIOT,
+  "Colorado State University": MOUNTAIN_WEST,
+  "Columbia University": IVY_LEAGUE,
+  "Coppin State University": MID_EASTERN,
+  "Cornell University": IVY_LEAGUE,
+  "Creighton University": BIG_EAST,
+  "Dartmouth College": IVY_LEAGUE,
+  "Davidson College": ATLANTIC_10,
+  "Delaware State University": MID_EASTERN,
+  "DePaul University": BIG_EAST,
+  "Drake University": MISSOURI_VALLEY,
+  "Drexel University": CAA,
+  "Duke University": ACC,
+  "Duquesne University": ATLANTIC_10,
+  "East Carolina University": AMERICAN,
+  "East Tennessee State University": SOUTHERN,
+  "Eastern Illinois University": OHIO_VALLEY,
+  "Eastern Kentucky University": ASUN,
+  "Eastern Michigan University": MAC,
+  "Eastern Washington University": BIG_SKY,
+  "Elon University": CAA,
+  "Fairfield University": METRO_ATLANTIC,
+  "Fairleigh Dickinson University": NORTHEAST,
+  "Florida A&M University": SWAC,
+  "Florida Atlantic University": AMERICAN,
+  "Florida Gulf Coast University": ASUN,
+  "Florida International University": CUSA,
+  "Florida State University": ACC,
+  "Fordham University": ATLANTIC_10,
+  "Furman University": SOUTHERN,
+  "Gardner-Webb University": BIG_SOUTH,
+  "George Mason University": ATLANTIC_10,
+  "George Washington University": ATLANTIC_10,
+  "Georgetown University": BIG_EAST,
+  "Georgia Southern University": SUN_BELT,
+  "Georgia State University": SUN_BELT,
+  "Georgia Tech": ACC,
+  "Gonzaga University": WCC,
+  "Grambling State University": SWAC,
+  "Grand Canyon University": MOUNTAIN_WEST,
+  "Hampton University": CAA,
+  "Harvard University": IVY_LEAGUE,
+  "High Point University": BIG_SOUTH,
+  "Hofstra University": CAA,
+  "Houston Christian University": SOUTHLAND,
+  "Howard University": MID_EASTERN,
+  "Idaho State University": BIG_SKY,
+  "Illinois State University": MISSOURI_VALLEY,
+  "Indiana State University": MISSOURI_VALLEY,
+  "Indiana University": BIG_10,
+  "Indiana University-Purdue University - Indianapolis (IUPUI)": HORIZON,
+  "Iona University": METRO_ATLANTIC,
+  "Iowa State University": BIG_12,
+  "Jackson State University": SWAC,
+  "Jacksonville State University": ASUN,
+  "Jacksonville University": ASUN,
+  "James Madison University": SUN_BELT,
+  "Kansas State University": BIG_12,
+  "Kennesaw State University": ASUN,
+  "Kent State University": MAC,
+  "La Salle University": ATLANTIC_10,
+  "Lafayette College": PATRIOT,
+  "Lamar University": SOUTHLAND,
+  "Lehigh University": PATRIOT,
+  "Liberty University": CUSA,
+  "Lindenwood University": OHIO_VALLEY,
+  "Lipscomb University": ASUN,
+  "Long Island University": NORTHEAST,
+  "Longwood University": BIG_SOUTH,
+  "Louisiana State University (LSU)": SEC,
+  "Louisiana Tech University": CUSA,
+  "Loyola Marymount University": WCC,
+  "Loyola University Chicago": ATLANTIC_10,
+  "Loyola University Maryland": PATRIOT,
+  "Manhattan College": METRO_ATLANTIC,
+  "Marist College": METRO_ATLANTIC,
+  "Marquette University": BIG_EAST,
+  "Marshall University": SUN_BELT,
+  "McNeese State University": SOUTHLAND,
+  "Mercer University": SOUTHERN,
+  "Merrimack College": NORTHEAST,
+  "Miami University": MAC,
+  "Michigan State University": BIG_10,
+  "Middle Tennessee State University": CUSA,
+  "Mississippi State University": SEC,
+  "Mississippi Valley State University": SWAC,
+  "Missouri State University": CUSA,
+  "Monmouth University": CAA,
+  "Montana State University": BIG_SKY,
+  "Morehead State University": OHIO_VALLEY,
+  "Morgan State University": MID_EASTERN,
+  "Mount St. Mary's University": METRO_ATLANTIC,
+  "Murray State University": MISSOURI_VALLEY,
+  "New Jersey Institute of Technology": AMERICA_EAST,
+  "New Mexico State University": CUSA,
+  "Niagara University": METRO_ATLANTIC,
+  "Nicholls State University": SOUTHLAND,
+  "Norfolk State University": MID_EASTERN,
+  "North Carolina A&T State University": CAA,
+  "North Carolina Central University": MID_EASTERN,
+  "North Carolina State University": ACC,
+  "North Dakota State University": SUMMIT,
+  "Northeastern University": CAA,
+  "Northern Arizona University": BIG_SKY,
+  "Northern Illinois University": MAC,
+  "Northern Kentucky University": HORIZON,
+  "Northwestern State University of Louisiana": SOUTHLAND,
+  "Northwestern University": BIG_10,
+  "Oakland University": HORIZON,
+  "Ohio State University": BIG_10,
+  "Ohio University": MAC,
+  "Oklahoma State University": BIG_12,
+  "Old Dominion University": SUN_BELT,
+  "Oral Roberts University": SUMMIT,
+  "Oregon State University": PAC_12,
+  "Penn State": BIG_10,
+  "Pepperdine University": WCC,
+  "Portland State University": BIG_SKY,
+  "Prairie View A & M University": SWAC,
+  "Presbyterian College": BIG_SOUTH,
+  "Princeton University": IVY_LEAGUE,
+  "Providence College": BIG_EAST,
+  "Purdue University": BIG_10,
+  "Purdue University - Fort Wayne": HORIZON,
+  "Queens University of Charlotte": ASUN,
+  "Quinnipiac University": METRO_ATLANTIC,
+  "Radford University": BIG_SOUTH,
+  "Rice University": AMERICAN,
+  "Rider University": METRO_ATLANTIC,
+  "Robert Morris University - Pennsylvania": HORIZON,
+  "Rutgers University": BIG_10,
+  "Sacred Heart University": NORTHEAST,
+  "Saint Francis University": NORTHEAST,
+  "Saint Joseph's University": ATLANTIC_10,
+  "Saint Louis University": ATLANTIC_10,
+  "Saint Mary's College of California": WCC,
+  "Saint Peter's University": METRO_ATLANTIC,
+  "Sam Houston State University": CUSA,
+  "Samford University": SOUTHERN,
+  "San Diego State University": MOUNTAIN_WEST,
+  "San Jose State University": MOUNTAIN_WEST,
+  "Santa Clara University": WCC,
+  "Seattle University": WCC,
+  "Seton Hall University": BIG_EAST,
+  "Siena College": METRO_ATLANTIC,
+  "South Carolina State University": MID_EASTERN,
+  "South Dakota State University": SUMMIT,
+  "Southeast Missouri State University": OHIO_VALLEY,
+  "Southeastern Louisiana University": SOUTHLAND,
+  "Southern Illinois University Carbondale": MISSOURI_VALLEY,
+  "Southern Illinois University Edwardsville": OHIO_VALLEY,
+  "Southern Methodist University - SMU": ACC,
+  "Southern University & A&M College": SWAC,
+  "Southern Utah University": WAC,
+  "St. Bonaventure University": ATLANTIC_10,
+  "St. Francis College": NORTHEAST,
+  "St. John's University - New York": BIG_EAST,
+  "Stanford University": ACC,
+  "Stephen F Austin State University": SOUTHLAND,
+  "Stetson University": ASUN,
+  "Stonehill College": NORTHEAST,
+  "SUNY Binghamton University": AMERICA_EAST,
+  "SUNY Stony Brook University": CAA,
+  "SUNY University at Albany": AMERICA_EAST,
+  "SUNY University at Buffalo": MAC,
+  "Syracuse University": ACC,
+  "Tarleton State University": WAC,
+  "Temple University": AMERICAN,
+  "Tennessee State University": OHIO_VALLEY,
+  "Texas A&M University": SEC,
+  "Texas A&M University - Commerce": SOUTHLAND,
+  "Texas A&M University - Corpus Christi": SOUTHLAND,
+  "Texas Christian University": BIG_12,
+  "Texas Southern University": SWAC,
+  "Texas State University": SUN_BELT,
+  "Texas Tech University": BIG_12,
+  "The Citadel": SOUTHERN,
+  "Towson University": CAA,
+  "Troy University": SUN_BELT,
+  "Tulane University": AMERICAN,
+  "United States Air Force Academy": MOUNTAIN_WEST,
+  "United States Military Academy": PATRIOT,
+  "United States Naval Academy": PATRIOT,
+  "University of Akron": MAC,
+  "University of Alabama": SEC,
+  "University of Alabama - Birmingham": AMERICAN,
+  "University of Arizona": BIG_12,
+  "University of Arkansas": SEC,
+  "University of Arkansas at Little Rock": OHIO_VALLEY,
+  "University of Arkansas at Pine Bluff": SWAC,
+  "University of California - Berkeley": ACC,
+  "University of California - Davis": BIG_WEST,
+  "University of California - Irvine": BIG_WEST,
+  "University of California - Los Angeles - UCLA": BIG_10,
+  "University of California - Riverside": BIG_WEST,
+  "University of California - San Diego": BIG_WEST,
+  "University of California - Santa Barbara": BIG_WEST,
+  "University of Central Arkansas": ASUN,
+  "University of Central Florida": BIG_12,
+  "University of Cincinnati": BIG_12,
+  "University of Colorado - Boulder": BIG_12,
+  "University of Connecticut": BIG_EAST,
+  "University of Dayton": ATLANTIC_10,
+  "University of Delaware": CUSA,
+  "University of Denver": SUMMIT,
+  "University of Detroit Mercy": HORIZON,
+  "University of Evansville": MISSOURI_VALLEY,
+  "University of Florida": SEC,
+  "University of Georgia": SEC,
+  "University of Hawaii at Manoa": BIG_WEST,
+  "University of Houston": BIG_12,
+  "University of Idaho": BIG_SKY,
+  "University of Illinois": BIG_10,
+  "University of Illinois at Chicago": MISSOURI_VALLEY,
+  "University of Iowa": BIG_10,
+  "University of Kansas": BIG_12,
+  "University of Kentucky": SEC,
+  "University of Louisiana": SUN_BELT,
+  "University of Louisiana - Monroe": SUN_BELT,
+  "University of Louisville": ACC,
+  "University of Maine": AMERICA_EAST,
+  "University of Maryland": BIG_10,
+  "University of Maryland - Baltimore County": AMERICA_EAST,
+  "University of Maryland Eastern Shore": MID_EASTERN,
+  "University of Massachusetts - Amherst": MAC,
+  "University of Massachusetts - Lowell": AMERICA_EAST,
+  "University of Memphis": AMERICAN,
+  "University of Miami": ACC,
+  "University of Michigan": BIG_10,
+  "University of Minnesota": BIG_10,
+  "University of Mississippi": SEC,
+  "University of Missouri": SEC,
+  "University of Missouri - Kansas City": SUMMIT,
+  "University of Montana": BIG_SKY,
+  "University of Nebraska": BIG_10,
+  "University of Nebraska at Omaha": SUMMIT,
+  "University of Nevada - Las Vegas": MOUNTAIN_WEST,
+  "University of Nevada - Reno": MOUNTAIN_WEST,
+  "University of New Hampshire": AMERICA_EAST,
+  "University of New Mexico": MOUNTAIN_WEST,
+  "University of New Orleans": SOUTHLAND,
+  "University of North Alabama": ASUN,
+  "University of North Carolina - Greensboro": SOUTHERN,
+  "University of North Carolina - Wilmington": CAA,
+  "University of North Carolina Asheville": BIG_SOUTH,
+  "University of North Carolina at Chapel Hill": ACC,
+  "University of North Carolina at Charlotte": AMERICAN,
+  "University of North Dakota": SUMMIT,
+  "University of North Florida": ASUN,
+  "University of North Texas": AMERICAN,
+  "University of Northern Colorado": BIG_SKY,
+  "University of Northern Iowa": MISSOURI_VALLEY,
+  "University of Notre Dame": ACC,
+  "University of Oklahoma": SEC,
+  "University of Oregon": BIG_10,
+  "University of Pennsylvania - Penn": IVY_LEAGUE,
+  "University of Pittsburgh": ACC,
+  "University of Portland": WCC,
+  "University of Rhode Island": ATLANTIC_10,
+  "University of Richmond": ATLANTIC_10,
+  "University of San Diego": WCC,
+  "University of San Francisco": WCC,
+  "University of South Alabama": SUN_BELT,
+  "University of South Carolina": SEC,
+  "University of South Carolina - Upstate": BIG_SOUTH,
+  "University of South Dakota": SUMMIT,
+  "University of South Florida": AMERICAN,
+  "University of Southern California": BIG_10,
+  "University of Southern Mississippi": SUN_BELT,
+  "University of St. Thomas - Minnesota": SUMMIT,
+  "University of Tennessee": SEC,
+  "University of Tennessee - Chattanooga": SOUTHERN,
+  "University of Tennessee - Martin": OHIO_VALLEY,
+  "University of Texas - Arlington": WAC,
+  "University of Texas - Austin": SEC,
+  "University of Texas - El Paso": CUSA,
+  "University of Texas - Rio Grande Valley": WAC,
+  "University of Texas - San Antonio": AMERICAN,
+  "University of the Incarnate Word": SOUTHLAND,
+  "University of the Pacific": WCC,
+  "University of Toledo": MAC,
+  "University of Tulsa": AMERICAN,
+  "University of Utah": BIG_12,
+  "University of Vermont": AMERICA_EAST,
+  "University of Virginia": ACC,
+  "University of Washington": BIG_10,
+  "University of Wisconsin": BIG_10,
+  "University of Wisconsin - Green Bay": HORIZON,
+  "University of Wisconsin - Milwaukee": HORIZON,
+  "University of Wyoming": MOUNTAIN_WEST,
+  "Utah State University": MOUNTAIN_WEST,
+  "Utah Tech University (Formerly Dixie State University)": WAC,
+  "Utah Valley University": WAC,
+  "Valparaiso University": MISSOURI_VALLEY,
+  "Vanderbilt University": SEC,
+  "Villanova University": BIG_EAST,
+  "Virginia Commonwealth University": ATLANTIC_10,
+  "Virginia Military Institute - VMI": BIG_SOUTH,
+  "Virginia Tech": ACC,
+  "Wagner College": NORTHEAST,
+  "Wake Forest University": ACC,
+  "Washington State University": WCC,
+  "Weber State University": BIG_SKY,
+  "West Virginia University": BIG_12,
+  "Western Carolina University": SOUTHERN,
+  "Western Illinois University": OHIO_VALLEY,
+  "Western Kentucky University": CUSA,
+  "Western Michigan University": MAC,
+  "Wichita State University": AMERICAN,
+  "William & Mary": CAA,
+  "Winthrop University": BIG_SOUTH,
+  "Wofford College": SOUTHERN,
+  "Wright State University": HORIZON,
+  "Xavier University": BIG_EAST,
+  "Yale University": IVY_LEAGUE,
+  "Youngstown State University": HORIZON,
 };
 
 
 const now = new Date();
 const TWENTY_FOUR_HOURS_IN_MILLIS = 86400000;
-const RELEASE_DAY = new Date("2025-03-20 00:00:00-0500");
+const RELEASE_DAY = new Date("2026-03-17 00:00:00-0500");
 const MIN_GUESSES = 3;
 
 const BLACK_SQUARE = String.fromCodePoint(0x2B1B);
@@ -713,8 +759,8 @@ const getRemainingConferences = (colleges, guesses) => {
 };
 
 const isCorrectConference = (colleges, guesses, guessIndex) => {
-  const confsBefore = guessIndex === 0 ? colleges.map((c) => COLLEGES[c]) : getRemainingConferences(colleges, guesses.slice(0, guessIndex));
-  return confsBefore.includes(COLLEGES[guesses[guessIndex]]);
+  const remainingConfs = getRemainingConferences(colleges, guesses.slice(0, guessIndex));
+  return remainingConfs.includes(COLLEGES[guesses[guessIndex]]);
 };
 
 const renderGuesses = (colleges, guesses) => {
@@ -929,6 +975,10 @@ const updateResults = () => {
 
   if (gameNumber > NBA_ANSWERS.length) {
     gameZone.innerHTML = `<h2 class="next-year">We'll see you in March</h2>`;
+  } else if (gameNumber < 0) {
+    gameZone.innerHTML = `<h2 class="countdown">Game time in ${Math.abs(gameIndex)} days...</h2>`;
+  } else if (gameNumber === 0) {
+    gameZone.innerHTML = `<h2 class="countdown">Rest up. We got a game tomorrow.</h2>`;
   } else {
     gameZone.innerHTML = `<h3 class="game-number">Game Day #${gameNumber}</h3>` + todaysResults.map((guesses, roundIndex) => {
       return renderPlayerSection({ ...todaysAnswers[roundIndex], guesses, roundIndex });
