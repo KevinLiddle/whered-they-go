@@ -14,18 +14,12 @@ const NBA_ANSWERS = [
     "playerId": "2240"
   },
   {
-    "name": "Jalen Williams",
+    "name": "Tari Eason",
     "colleges": [
-      "Santa Clara University",
+      "University of Cincinnati",
+      "Louisiana State University (LSU)",
     ],
-    "playerId": "1631114"
-  },
-  {
-    "name": "Pascal Siakam",
-    "colleges": [
-      "New Mexico State University",
-    ],
-    "playerId": "1627783"
+    "playerId": "1631106"
   },
   {
     "name": "Michael Carter-Williams",
@@ -33,6 +27,27 @@ const NBA_ANSWERS = [
       "Syracuse University",
     ],
     "playerId": "203487"
+  },
+  {
+    "name": "Paul Reed",
+    "colleges": [
+      "DePaul University",
+    ],
+    "playerId": "1630194"
+  },
+  {
+    "name": "Jabari Smith Jr.",
+    "colleges": [
+      "Auburn University",
+    ],
+    "playerId": "1631095"
+  },
+  {
+    "name": "Pascal Siakam",
+    "colleges": [
+      "New Mexico State University",
+    ],
+    "playerId": "1627783"
   },
   {
     "name": "Dejounte Murray",
@@ -49,250 +64,242 @@ const NBA_ANSWERS = [
     "playerId": "203083"
   },
   {
-    "name": "Paul Reed",
+    "name": "PJ Tucker",
     "colleges": [
-      "DePaul University",
+      "University of Texas - Austin",
     ],
-    "playerId": "1630194"
+    "playerId": "200782"
   },
   {
-    "name": "",
+    "name": "Jalen Williams",
     "colleges": [
-      "",
+      "Santa Clara University",
     ],
-    "playerId": ""
+    "playerId": "1631114"
   },
   {
-    "name": "",
+    "name": "AJ Green",
     "colleges": [
-      "",
+      "University of Northern Iowa",
     ],
-    "playerId": ""
+    "playerId": "1631260"
   },
   {
-    "name": "",
+    "name": "Mac McClung",
     "colleges": [
-      "",
+      "Georgetown University",
+      "Texas Tech University",
     ],
-    "playerId": ""
+    "playerId": "1630644"
   },
   {
-    "name": "",
+    "name": "Jarred Vanderbilt",
     "colleges": [
-      "",
+      "University of Kentucky",
     ],
-    "playerId": ""
+    "playerId": "1629020"
   },
   {
-    "name": "",
+    "name": "Kenneth Faried",
     "colleges": [
-      "",
+      "Morehead State University",
     ],
-    "playerId": ""
+    "playerId": "202702"
   },
   {
-    "name": "",
+    "name": "Kris Dunn",
     "colleges": [
-      "",
+      "Providence College",
     ],
-    "playerId": ""
+    "playerId": "1627739"
   },
   {
-    "name": "",
+    "name": "Caleb Love",
     "colleges": [
-      "",
+      "University of North Carolina at Chapel Hill",
+      "University of Arizona",
     ],
-    "playerId": ""
+    "playerId": "1631126"
   },
   {
-    "name": "",
+    "name": "Seth Curry",
     "colleges": [
-      "",
+      "Liberty University",
+      "Duke University",
     ],
-    "playerId": ""
+    "playerId": "203552"
   },
   {
-    "name": "",
+    "name": "Fred VanVleet",
     "colleges": [
-      "",
+      "Wichita State University",
     ],
-    "playerId": ""
+    "playerId": "1627832"
   },
   {
-    "name": "",
+    "name": "Herbert Jones",
     "colleges": [
-      "",
+      "University of Alabama",
     ],
-    "playerId": ""
+    "playerId": "1630529"
   },
   {
-    "name": "",
+    "name": "Darius Garland",
     "colleges": [
-      "",
+      "Vanderbilt University",
     ],
-    "playerId": ""
-  },
-  {
-    "name": "",
-    "colleges": [
-      "",
-    ],
-    "playerId": ""
-  },
-  {
-    "name": "",
-    "colleges": [
-      "",
-    ],
-    "playerId": ""
+    "playerId": "1629636"
   },
 ];
 
 const WNBA_ANSWERS = [
   {
+    "name": "Kiki Iriafen",
+    "colleges": [
+      "University of Southern California",
+      "Stanford University",
+    ],
+    "playerId": "1642792"
+  },
+  {
+    "name": "Chelsea Gray",
+    "colleges": [
+      "Duke University",
+    ],
+    "playerId": "203833"
+  },
+  {
+    "name": "Kayla McBride",
+    "colleges": [
+      "University of Notre Dame",
+    ],
+    "playerId": "203825"
+  },
+  {
+    "name": "Rickea Jackson",
+    "colleges": [
+      "Mississippi State University",
+      "University of Tennessee",
+    ],
+    "playerId": "1642288"
+  },
+  {
+    "name": "Jordin Canada",
+    "colleges": [
+      "University of California - Los Angeles - UCLA",
+    ],
+    "playerId": "1628886"
+  },
+  {
+    "name": "Kahleah Copper",
+    "colleges": [
+      "Rutgers University",
+    ],
+    "playerId": "1627674"
+  },
+  {
+    "name": "DiJonai Carrington",
+    "colleges": [
+      "Stanford University",
+      "Baylor University",
+    ],
+    "playerId": "1630096"
+  },
+  {
+    "name": "Tina Charles",
+    "colleges": [
+      "University of Connecticut",
+    ],
+    "playerId": "202250"
+  },
+  {
+    "name": "Rhyne Howard",
+    "colleges": [
+      "jniversity of Kentucky",
+    ],
+    "playerId": "1631009"
+  },
+  {
+    "name": "Sophie Cunningham",
+    "colleges": [
+      "University of Missouri",
+    ],
+    "playerId": "1629482"
+  },
+  {
     "name": "",
     "colleges": [
-      ""
+      "",
     ],
     "playerId": ""
   },
   {
     "name": "",
     "colleges": [
-      ""
+      "",
     ],
     "playerId": ""
   },
   {
     "name": "",
     "colleges": [
-      ""
+      "",
     ],
     "playerId": ""
   },
   {
     "name": "",
     "colleges": [
-      ""
+      "",
     ],
     "playerId": ""
   },
   {
     "name": "",
     "colleges": [
-      ""
+      "",
     ],
     "playerId": ""
   },
   {
     "name": "",
     "colleges": [
-      ""
+      "",
     ],
     "playerId": ""
   },
   {
     "name": "",
     "colleges": [
-      ""
+      "",
     ],
     "playerId": ""
   },
   {
     "name": "",
     "colleges": [
-      ""
+      "",
     ],
     "playerId": ""
   },
   {
     "name": "",
     "colleges": [
-      ""
+      "",
     ],
     "playerId": ""
   },
   {
     "name": "",
     "colleges": [
-      ""
+      "",
     ],
     "playerId": ""
   },
   {
     "name": "",
     "colleges": [
-      ""
-    ],
-    "playerId": ""
-  },
-  {
-    "name": "",
-    "colleges": [
-      ""
-    ],
-    "playerId": ""
-  },
-  {
-    "name": "",
-    "colleges": [
-      ""
-    ],
-    "playerId": ""
-  },
-  {
-    "name": "",
-    "colleges": [
-      ""
-    ],
-    "playerId": ""
-  },
-  {
-    "name": "",
-    "colleges": [
-      ""
-    ],
-    "playerId": ""
-  },
-  {
-    "name": "",
-    "colleges": [
-      ""
-    ],
-    "playerId": ""
-  },
-  {
-    "name": "",
-    "colleges": [
-      ""
-    ],
-    "playerId": ""
-  },
-  {
-    "name": "",
-    "colleges": [
-      ""
-    ],
-    "playerId": ""
-  },
-  {
-    "name": "",
-    "colleges": [
-      ""
-    ],
-    "playerId": ""
-  },
-  {
-    "name": "",
-    "colleges": [
-      ""
-    ],
-    "playerId": ""
-  },
-  {
-    "name": "",
-    "colleges": [
-      ""
+      "",
     ],
     "playerId": ""
   },
@@ -569,7 +576,7 @@ const COLLEGES = {
   "University of California - Berkeley": ACC,
   "University of California - Davis": BIG_WEST,
   "University of California - Irvine": BIG_WEST,
-  "University of California - Los Angeles - UCLA": BIG_10,
+  "University of California - Los Angeles (UCLA)": BIG_10,
   "University of California - Riverside": BIG_WEST,
   "University of California - San Diego": BIG_WEST,
   "University of California - Santa Barbara": BIG_WEST,
@@ -673,7 +680,7 @@ const COLLEGES = {
   "Vanderbilt University": SEC,
   "Villanova University": BIG_EAST,
   "Virginia Commonwealth University": ATLANTIC_10,
-  "Virginia Military Institute - VMI": BIG_SOUTH,
+  "Virginia Military Institute (VMI)": BIG_SOUTH,
   "Virginia Tech": ACC,
   "Wagner College": NORTHEAST,
   "Wake Forest University": ACC,
