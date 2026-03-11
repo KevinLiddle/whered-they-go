@@ -156,7 +156,7 @@ const WNBA_ANSWERS = [
   {
     "name": "Kiki Iriafen",
     "colleges": [
-      "University of Southern California",
+      "University of Southern California (USC)",
       "Stanford University",
     ],
     "playerId": "1642792"
@@ -653,8 +653,8 @@ const COLLEGES = {
   "University of South Carolina": SEC,
   "University of South Carolina - Upstate": BIG_SOUTH,
   "University of South Dakota": SUMMIT,
-  "University of South Florida": AMERICAN,
-  "University of Southern California": BIG_10,
+  "University of South Florida (USF)": AMERICAN,
+  "University of Southern California (USC)": BIG_10,
   "University of Southern Mississippi": SUN_BELT,
   "University of St. Thomas - Minnesota": SUMMIT,
   "University of Tennessee": SEC,
@@ -719,7 +719,7 @@ const YELLOW_SQUARE = String.fromCodePoint(0x1F7E8);
 const gameIndexFromQueryParams = new URL(window.location.toString()).searchParams?.get("g");
 const gameIndex = gameIndexFromQueryParams ? parseInt(gameIndexFromQueryParams, 10) : Math.floor((now - RELEASE_DAY) / TWENTY_FOUR_HOURS_IN_MILLIS);
 const gameNumber = gameIndex + 1;
-const todayKey = `WTG-1-${gameNumber}`;
+const todayKey = `WTG-${now.getFullYear()}-${gameNumber}`;
 const todayNBA = NBA_ANSWERS[gameIndex];
 const todayWNBA = WNBA_ANSWERS[gameIndex];
 const todaysAnswers = [
