@@ -7,13 +7,6 @@ const NBA_ANSWERS = [
     "playerId": "1642847"
   },
   {
-    "name": "Gilbert Arenas",
-    "colleges": [
-      "University of Arizona",
-    ],
-    "playerId": "2240"
-  },
-  {
     "name": "Tari Eason",
     "colleges": [
       "University of Cincinnati",
@@ -150,6 +143,13 @@ const NBA_ANSWERS = [
     ],
     "playerId": "1629636"
   },
+  {
+    "name": "Gilbert Arenas",
+    "colleges": [
+      "University of Arizona",
+    ],
+    "playerId": "2240"
+  },
 ];
 
 const WNBA_ANSWERS = [
@@ -227,81 +227,85 @@ const WNBA_ANSWERS = [
     "playerId": "1629482"
   },
   {
-    "name": "",
+    "name": "Dearica Hamby",
     "colleges": [
-      "",
+      "Wake Forest University",
     ],
-    "playerId": ""
+    "playerId": "204324"
   },
   {
-    "name": "",
+    "name": "Nneka Ogwumike",
     "colleges": [
-      "",
+      "Stanford University",
     ],
-    "playerId": ""
+    "playerId": "203014"
   },
   {
-    "name": "",
+    "name": "Natasha Cloud",
     "colleges": [
-      "",
+      "University of Maryland",
+      "Saint Joseph's University",
     ],
-    "playerId": ""
+    "playerId": "204333"
   },
   {
-    "name": "",
+    "name": "Allisha Gray",
     "colleges": [
-      "",
+      "University of North Carolina at Chapel Hill",
+      "University of South Carolina",
     ],
-    "playerId": ""
+    "playerId": "1628277"
   },
   {
-    "name": "",
+    "name": "Veronica Burton",
     "colleges": [
-      "",
+      "Northwestern University",
     ],
-    "playerId": ""
+    "playerId": "1631007"
   },
   {
-    "name": "",
+    "name": "Cappie Pondexter",
     "colleges": [
-      "",
+      "Rutgers University",
     ],
-    "playerId": ""
+    "playerId": "200665"
   },
   {
-    "name": "",
+    "name": "Rachel Banham",
     "colleges": [
-      "",
+      "University of Minnesota",
     ],
-    "playerId": ""
+    "playerId": "1627671"
   },
   {
-    "name": "",
+    "name": "Kayla Thornton",
     "colleges": [
-      "",
+      "University of Texas - El Paso (UTEP)",
     ],
-    "playerId": ""
+    "playerId": "203866"
   },
   {
-    "name": "",
+    "name": "Brittney Sykes",
     "colleges": [
-      "",
+      "Syracuse University",
     ],
-    "playerId": ""
+    "playerId": "1628279"
   },
   {
-    "name": "",
+    "name": "Hailey Van Lith",
     "colleges": [
-      "",
+      "University of Louisville",
+      "Louisiana State University (LSU)",
+      "Texas Christian University (TCU)",
     ],
-    "playerId": ""
+    "playerId": "1642817"
   },
   {
-    "name": "",
+    "name": "Dawn Staley",
     "colleges": [
-      "",
+      "University of Virginia",
     ],
-    "playerId": ""
+    "headshot": "https://gamecocksonline.com/imgproxy/QqdzPzGO9We-QzZUgyVk2ZINSN16fMXYB--Zlb6z9CM/fit/564/832/ce/0/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dhbWVjb2Nrc29ubGluZS1jb20vMjAyMi8wNS8wZWYwYTY4ZS1zdGFsZXlfMjUxMTE5X2hlYWRzaG90XzEtMl93ZWIuanBn.png",
   },
 ];
 
@@ -555,7 +559,7 @@ const COLLEGES = {
   "Texas A&M University": SEC,
   "Texas A&M University - Commerce": SOUTHLAND,
   "Texas A&M University - Corpus Christi": SOUTHLAND,
-  "Texas Christian University": BIG_12,
+  "Texas Christian University (TCU)": BIG_12,
   "Texas Southern University": SWAC,
   "Texas State University": SUN_BELT,
   "Texas Tech University": BIG_12,
@@ -658,7 +662,7 @@ const COLLEGES = {
   "University of Tennessee - Martin": OHIO_VALLEY,
   "University of Texas - Arlington": WAC,
   "University of Texas - Austin": SEC,
-  "University of Texas - El Paso": CUSA,
+  "University of Texas - El Paso (UTEP)": CUSA,
   "University of Texas - Rio Grande Valley": WAC,
   "University of Texas - San Antonio": AMERICAN,
   "University of the Incarnate Word": SOUTHLAND,
@@ -716,16 +720,18 @@ const gameIndexFromQueryParams = new URL(window.location.toString()).searchParam
 const gameIndex = gameIndexFromQueryParams ? parseInt(gameIndexFromQueryParams, 10) : Math.floor((now - RELEASE_DAY) / TWENTY_FOUR_HOURS_IN_MILLIS);
 const gameNumber = gameIndex + 1;
 const todayKey = `WTG-1-${gameNumber}`;
+const todayNBA = NBA_ANSWERS[gameIndex];
+const todayWNBA = WNBA_ANSWERS[gameIndex];
 const todaysAnswers = [
   {
     league: "NBA",
-    headshot: `https://cdn.nba.com/headshots/nba/latest/260x190/${NBA_ANSWERS[gameIndex]?.playerId}.png`,
-    ...NBA_ANSWERS[gameIndex],
+    headshot: todayNBA?.headshot ?? `https://cdn.nba.com/headshots/nba/latest/260x190/${todayNBA?.playerId}.png`,
+    ...todayNBA,
   },
   {
     league: "WNBA",
-    headshot: `https://cdn.wnba.com/headshots/wnba/latest/260x190/${WNBA_ANSWERS[gameIndex]?.playerId}.png`,
-    ...WNBA_ANSWERS[gameIndex],
+    headshot: todayWNBA?.headshot ?? `https://cdn.wnba.com/headshots/wnba/latest/260x190/${todayWNBA?.playerId}.png`,
+    ...todayWNBA,
   },
 ];
 
