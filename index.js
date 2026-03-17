@@ -877,7 +877,7 @@ const renderResultModal = (todaysResults) => {
   }).join("");
   const resultEmojiText = `Where'd they go? Game Day #${gameNumber}\n` +
     todaysResults.map((guesses, roundIndex) => renderResultEmoji(guesses, roundIndex)).join("\n") +
-    "\n";
+    "\nhttps://kevinliddle.github.io/whered-they-go/";
 
   const winner = todaysResults.every(
     (guesses, roundIndex) => isRoundCorrect(todaysAnswers[roundIndex].colleges, guesses)
